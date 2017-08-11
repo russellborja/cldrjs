@@ -6,10 +6,10 @@
  * Released under the MIT license
  * http://jquery.org/license
  *
- * Date: 2015-02-25T13:51Z
+ * Date: 2017-08-11T14:05Z
  */
 /*!
- * CLDR JavaScript Library v0.4.1 2015-02-25T13:51Z MIT license © Rafael Xavier
+ * CLDR JavaScript Library v0.4.1 2017-08-11T14:05Z MIT license © Rafael Xavier
  * http://git.io/h4lmVg
  */
 (function( factory ) {
@@ -42,7 +42,7 @@
 var EventEmitter;
 /* jshint ignore:start */
 EventEmitter = (function () {
-	
+	'use strict';
 
 	/**
 	 * Class for managing events.
@@ -54,8 +54,8 @@ EventEmitter = (function () {
 
 	// Shortcuts to improve speed and size
 	var proto = EventEmitter.prototype;
-	var exports = this;
-	var originalGlobalValue = exports.EventEmitter;
+	var exports = {};
+	
 
 	/**
 	 * Finds the index of the listener for the event in it's storage array.
