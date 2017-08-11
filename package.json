@@ -49,8 +49,9 @@
     "grunt-contrib-requirejs": "0.4.x",
     "grunt-contrib-uglify": "0.2.x",
     "grunt-dco": "0.0.3",
-    "gzip-js": "0.3.2",
     "grunt-mocha": "0.3.x",
+    "grunt-mocha-test": "^0.13.2",
+    "gzip-js": "0.3.2",
     "matchdep": "*"
   }
 }

@@ -48,31 +48,36 @@ module.exports = function(grunt) {
 			source: {
 				src: [ "src/**/*.js", "!src/build/**" ],
 				options: {
-					jshintrc: "src/.jshintrc"
+					jshintrc: "src/.jshintrc",
+					reporterOutput: "",
 				}
 			},
 			grunt: {
 				src: [ "Gruntfile.js" ],
 				options: {
-					jshintrc: ".jshintrc"
+					jshintrc: ".jshintrc",
+					reporterOutput: "",
 				}
 			},
 			metafiles: {
 				src: [ "bower.json", "package.json" ],
 				options: {
-					jshintrc: ".jshintrc"
+					jshintrc: ".jshintrc",
+					reporterOutput: "",
 				}
 			},
 			test: {
 				src: [ "test/**/*.js" ],
 				options: {
-					jshintrc: "test/.jshintrc"
+					jshintrc: "test/.jshintrc",
+					reporterOutput: "",
 				}
 			},
 			dist: {
 				src: [ "dist/**/*.js" ],
 				options: {
-					jshintrc: "src/.dist_jshintrc"
+					jshintrc: "src/.dist_jshintrc",
+					reporterOutput: "",
 				}
 			}
 		},
@@ -85,7 +90,7 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-		mocha: {
+		mochaTest: {
 			unit: {
 				options: {
 					log: true,
@@ -272,7 +277,7 @@ module.exports = function(grunt) {
 			grunt.task.run( "connect:test" );
 			isConnectTestRunning = true;
 		}
-		grunt.task.run( [ "mocha" ].concat( args ).join( ":" ) );
+		grunt.task.run( [ "mochaTest" ].concat( args ).join( ":" ) );
 	});
 
 	grunt.registerTask( "default", [
