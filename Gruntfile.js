@@ -129,6 +129,8 @@ module.exports = function(grunt) {
 					if ( (/^EventEmitter$/).test( id ) ) {
 						contents = contents
 							.replace( /(\(function \(\) {)/, "var EventEmitter;\n/* jshint ignore:start */\nEventEmitter = $1" )
+							.replace( /var exports = this;/, "var exports = {};" )
+ 							.replace( /var originalGlobalValue = exports.EventEmitter;/, "" )
 							.replace( /\/\/ Expose the class either via AMD, CommonJS[\S\s]*}\.call\(this\)\);/, "return EventEmitter;\n}());\n/* jshint ignore:end */" );
 						return contents;
 					}
